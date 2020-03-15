@@ -36,3 +36,4 @@ test/template-validation-tests/mochawesome-report/*
 
 test/AzTemplateToolKit.zip
 test/arm-template-toolkit.zip
+/.vs/azure-quickstart-templates/v16/.suo
