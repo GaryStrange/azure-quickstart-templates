@@ -88,7 +88,7 @@
     },
     "captureTime": {
       "type": "int",
-      "defaultValue": 300,
+      "defaultValue": 60,
       "minValue": 60,
       "maxValue": 900,
       "metadata": {
