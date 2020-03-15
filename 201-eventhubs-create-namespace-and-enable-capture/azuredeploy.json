@@ -131,6 +131,22 @@
   },
   "resources": [
     {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-05-01",
+      "name": "linkedTemplate",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://github.com/GaryStrange/azure-quickstart-templates/blob/master/201-eventhubs-create-namespace-and-enable-capture/prereqs/prereq.azuredeploy.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parametersLink": {
+          "uri": "https://github.com/GaryStrange/azure-quickstart-templates/blob/master/201-eventhubs-create-namespace-and-enable-capture/prereqs/prereq.azuredeploy.parameters.json",
+          "contentVersion": "1.0.0.0"
+        }
+      }
+    },
+    {
       "apiVersion": "2018-01-01-preview",
       "name": "[parameters('eventHubNamespaceName')]",
       "type": "Microsoft.EventHub/Namespaces",
