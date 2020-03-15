@@ -133,7 +133,7 @@
     {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2018-05-01",
-      "name": "linkedTemplate",
+      "name": "storagelinkedTemplate",
       "properties": {
         "mode": "Incremental",
         "templateLink": {
@@ -184,7 +184,7 @@
               "destination": {
                 "name": "EventHubArchive.AzureBlockBlob",
                 "properties": {
-                  "storageAccountResourceId": "[parameters('existingStorageAcctResourceId')]",
+                  "storageAccountResourceId": "[reference('storagelinkedTemplate').outputs.storageAcctResourceId.value]",
                   "blobContainer": "[parameters('blobContainerName')]",
                   "archiveNameFormat": "[parameters('captureNameFormat')]"
                 }

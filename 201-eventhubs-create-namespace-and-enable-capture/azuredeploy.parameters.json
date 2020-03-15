@@ -32,9 +32,6 @@
     "captureSize": {
       "value": 314572800
     },
-    "existingStorageAcctResourceId": {
-      "value": "GET-PREREQ-storageAcctResourceId"
-    },
     "blobContainerName": {
       "value": "GEN-UNIQUE"
     }
