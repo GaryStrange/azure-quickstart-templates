@@ -102,6 +102,7 @@
     },
     "blobContainerName": {
       "type": "string",
+      "defaultValue": "gavrocontainer",
       "metadata": {
         "description": "Your existing storage container that you want the blobs archived in"
       }
