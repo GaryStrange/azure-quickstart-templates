@@ -18,7 +18,7 @@
     }
   },
   "variables": {
-    "storageAccountName": "[concat('store', uniquestring(resourceGroup().id))]"
+    "storageAccountName": "[concat('gavrostore', uniquestring(resourceGroup().id))]"
   },
   "resources": [
     {
