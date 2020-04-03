@@ -67,6 +67,7 @@
 		},
 		"databaseName": {
 			"type": "string",
+			"defaultValue": "salesOrders",
 			"metadata": {
 				"description": "The name for the SQL database"
 			}
@@ -82,7 +83,7 @@
 		},
 		"sharedContainer1Name": {
 			"type": "string",
-			"defaultValue": "sharedContainer1",
+			"defaultValue": "orderReceived",
 			"metadata": {
 				"description": "The name for the first container with shared throughput"
 			}
