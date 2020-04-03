@@ -2,32 +2,17 @@
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "accountName": {
-      "value": "GEN-UNIQUE"
-    },
     "primaryRegion": {
-      "value": "West US 2"
-    },
-    "secondaryRegion": {
-      "value": "East US 2"
+      "value": "West Europe"
     },
     "databaseName": {
-      "value": "myDatabase"
+      "value": "salesOrders"
     },
     "sharedThroughput": {
       "value": 400
     },
     "sharedContainer1Name": {
-      "value": "mySharedContainer1"
-    },
-    "sharedContainer2Name": {
-      "value": "mySharedContainer2"
-    },
-    "dedicatedContainer1Name": {
-      "value": "myDedicatedContainer1"
-    },
-    "dedicatedThroughput": {
-      "value": 400
+      "value": "orderReceived"
     }
   }
 }
