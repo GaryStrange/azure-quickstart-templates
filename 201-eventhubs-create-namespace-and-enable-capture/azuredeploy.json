@@ -148,7 +148,6 @@
           "name": "[parameters('eventHubName')]",
           "type": "eventhubs",
           "dependsOn": [
-            "storagelinkedTemplate",
             "[concat('Microsoft.EventHub/namespaces/', parameters('eventHubNamespaceName'))]"
           ],
           "properties": {
