@@ -9,11 +9,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri": "https://raw.githubusercontent.com/GaryStrange/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/prereqs/prereq.azuredeploy.json",
-          "contentVersion": "1.0.0.0"
-        },
-        "parametersLink": {
-          "uri": "https://raw.githubusercontent.com/GaryStrange/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/prereqs/prereq.azuredeploy.parameters.json",
+          "uri": "https://raw.githubusercontent.com/GaryStrange/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/azuredeploy.json",
           "contentVersion": "1.0.0.0"
         }
       }

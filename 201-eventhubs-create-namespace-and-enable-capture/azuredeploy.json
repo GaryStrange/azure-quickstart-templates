@@ -27,7 +27,7 @@
     },
     "isAutoInflateEnabled": {
       "type": "string",
-      "defaultValue": "True",
+      "defaultValue": "False",
       "allowedValues": [ "True", "False" ],
       "metadata": {
         "description": "Enable or disable AutoInflate"
