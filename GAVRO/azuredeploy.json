@@ -24,7 +24,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2018-05-01",
       "name": "ehlinkedTemplate",
-
+      "dependsOn": [ "storagelinkedTemplate" ],
       "properties": {
         "mode": "Incremental",
         "templateLink": {
