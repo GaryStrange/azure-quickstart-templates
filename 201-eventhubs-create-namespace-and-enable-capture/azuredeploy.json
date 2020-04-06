@@ -163,7 +163,7 @@
               "destination": {
                 "name": "EventHubArchive.AzureBlockBlob",
                 "properties": {
-                  "storageAccountResourceId": "[reference('storagelinkedTemplate').outputs.storageAcctResourceId.value]",
+                  "storageAccountResourceId": "[parameters('storageAccountResourceId')]",
                   "blobContainer": "[parameters('blobContainerName')]",
                   "archiveNameFormat": "[parameters('captureNameFormat')]"
                 }
