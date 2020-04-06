@@ -91,6 +91,12 @@
         "description": "the size window in bytes for evetn hub capture"
       }
     },
+    "storageAccountResourceId": {
+      "type": "string",
+      "metadata": {
+        "description": "Your existing storage account that you want the blobs archived in"
+      }
+    },
     "blobContainerName": {
       "type": "string",
       "defaultValue": "gavrocontainer",
@@ -118,22 +124,7 @@
     "authRuleResourceId": "[resourceId('Microsoft.EventHub/namespaces/authorizationRules', parameters('eventHubNamespaceName'), variables('defaultSASKeyName'))]"
   },
   "resources": [
-    {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2018-05-01",
-      "name": "storagelinkedTemplate",
-      "properties": {
-        "mode": "Incremental",
-        "templateLink": {
-          "uri": "https://raw.githubusercontent.com/GaryStrange/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/prereqs/prereq.azuredeploy.json",
-          "contentVersion": "1.0.0.0"
-        },
-        "parametersLink": {
-          "uri": "https://raw.githubusercontent.com/GaryStrange/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/prereqs/prereq.azuredeploy.parameters.json",
-          "contentVersion": "1.0.0.0"
-        }
-      }
-    },
+    
     {
       "apiVersion": "2018-01-01-preview",
       "name": "[parameters('eventHubNamespaceName')]",
