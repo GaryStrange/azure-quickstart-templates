@@ -1,6 +1,9 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
+  "variables": {
+    "storageAccountName":  "gavrostorage"
+  },
   "resources": [
     {
       "type": "Microsoft.Resources/deployments",
@@ -12,9 +15,8 @@
           "uri": "https://raw.githubusercontent.com/GaryStrange/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/prereqs/prereq.azuredeploy.json",
           "contentVersion": "1.0.0.0"
         },
-        "parametersLink": {
-          "uri": "https://raw.githubusercontent.com/GaryStrange/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/prereqs/prereq.azuredeploy.parameters.json",
-          "contentVersion": "1.0.0.0"
+        "parameters": {
+          "storageAccountName": { "value": "[variables('storageAccountName')]" }
         }
       }
     },
@@ -22,9 +24,7 @@
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2018-05-01",
       "name": "ehlinkedTemplate",
-      "dependsOn": [
-        "storagelinkedTemplate"
-      ],
+
       "properties": {
         "mode": "Incremental",
         "templateLink": {
@@ -32,7 +32,7 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
-          "storageAccountResourceId": { "value": "[reference('storagelinkedTemplate').outputs.storageAcctResourceId.value]" }
+          "storageAccountResourceId": { "value": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]" }
         }
       }
     }

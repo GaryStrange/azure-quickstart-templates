@@ -2,6 +2,12 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "storageAccountName": {
+      "type": "string",
+      "metadata": {
+        "description": "Storage Account name"
+      }
+    },
     "storageAccountType": {
       "type": "string",
       "defaultValue": "Standard_LRS",
@@ -17,13 +23,10 @@
       }
     }
   },
-  "variables": {
-    "storageAccountName": "[concat('gavrostore', uniquestring(resourceGroup().id))]"
-  },
   "resources": [
     {
       "type": "Microsoft.Storage/storageAccounts",
-      "name": "[variables('storageAccountName')]",
+      "name": "[parameters('storageAccountName')]",
       "location": "[parameters('location')]",
       "apiVersion": "2018-07-01",
       "sku": {
@@ -36,7 +39,7 @@
   "outputs": {
     "storageAcctResourceId": {
       "type": "string",
-      "value": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+      "value": "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName'))]"
     }
   }
 }
