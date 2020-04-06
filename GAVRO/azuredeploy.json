@@ -32,7 +32,8 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
-          "storageAccountResourceId": { "value": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]" }
+          "storageAccountResourceId": { "value": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]" },
+          "eventHubNamespaceName": { "value": "gavroehns2" }
         }
       }
     }

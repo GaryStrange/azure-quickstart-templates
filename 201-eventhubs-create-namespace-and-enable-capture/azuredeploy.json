@@ -4,7 +4,6 @@
   "parameters": {
     "eventHubNamespaceName": {
       "type": "string",
-      "defaultValue": "gavroehns",
       "metadata": {
         "description": "Name of the EventHub namespace"
       }
