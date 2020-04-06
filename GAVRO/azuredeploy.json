@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-05-01",
+      "name": "storagelinkedTemplate",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/GaryStrange/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/prereqs/prereq.azuredeploy.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parametersLink": {
+          "uri": "https://raw.githubusercontent.com/GaryStrange/azure-quickstart-templates/master/201-eventhubs-create-namespace-and-enable-capture/prereqs/prereq.azuredeploy.parameters.json",
+          "contentVersion": "1.0.0.0"
+        }
+      }
+    }
+  ]
+}
