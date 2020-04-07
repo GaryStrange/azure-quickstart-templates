@@ -1,0 +1,14 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "scope": { "value": "Microsoft.EventHub/namespaces/providers/roleAssignments" },
+    "roleAssignmentName": {
+      "value": "[concat('gavroehns/Microsoft.Authorization/', guid(uniqueString('gavroehns')))]"
+    },
+    "roleDefinitionID": {
+      "value": "2b629674-e913-4c01-ae53-ef4638d8f975",
+      "metadata": { "description": "Azure Event Hubs Data Sender" }
+    }
+  }
+}
