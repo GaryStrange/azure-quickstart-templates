@@ -23,6 +23,21 @@
     {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2018-05-01",
+      "name": "functionApplinkedTemplate",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/GaryStrange/azure-quickstart-templates/master/101-functions-managed-identity/azuredeploy.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "storageAccountName": { "value": "[variables('storageAccountName')]" }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-05-01",
       "name": "ehlinkedTemplate",
       "dependsOn": [ "storagelinkedTemplate" ],
       "properties": {
@@ -33,7 +48,7 @@
         },
         "parameters": {
           "storageAccountResourceId": { "value": "[reference('storagelinkedTemplate').outputs.storageAcctResourceId.value]" },
-          "eventHubNamespaceName": { "value": "gavroehns2" }
+          "eventHubNamespaceName": { "value": "gavroehns" }
         }
       }
     }
