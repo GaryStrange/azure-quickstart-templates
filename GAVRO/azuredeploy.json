@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "variables": {
     "storageAccountName": "gavrostorage",
-    "eventHubNameSpace":  "gavronamespace"
+    "eventHubNameSpace":  "gavroehnamespace"
   },
   "resources": [
     {
