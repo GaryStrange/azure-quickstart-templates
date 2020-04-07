@@ -9,8 +9,9 @@
         "description": "Specifies the name of the role assignment to create. It can be any valid GUID."
       }
     },
-    "roleDefinitionID": {
+    "roleDefinitionName": {
       "type": "string",
+      "allowedValues": [ "DataSender" ],
       "metadata": {
         "description": "Specifies the role definition ID used in the role assignment."
       }
@@ -22,13 +23,16 @@
       }
     }
   },
+  "variables": {
+    "DataSender": "2b629674-e913-4c01-ae53-ef4638d8f975"
+  },
   "resources": [
     {
       "type": "Microsoft.EventHub/namespaces/providers/roleAssignments",
       "apiVersion": "2018-09-01-preview",
       "name": "[parameters('roleAssignmentName')]",
       "properties": {
-        "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', parameters('roleDefinitionId'))]",
+        "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables(parameters('roleDefinitionName')))]",
         "principalId": "[parameters('principalId')]"
       }
     }
