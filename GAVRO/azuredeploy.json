@@ -49,7 +49,7 @@
         },
         "parameters": {
           "storageAccountResourceId": { "value": "[reference('storagelinkedTemplate').outputs.storageAcctResourceId.value]" },
-          "eventHubNamespaceName": { "value": "[variable('eventHubNameSpace')]" }
+          "eventHubNamespaceName": { "value": "[variables('eventHubNameSpace')]" }
         }
       }
     },
@@ -66,8 +66,8 @@
         },
         "parameters": {
           "principalId": { "value": "[reference('functionApplinkedTemplate').outputs.principalId.value]" },
-          "roleAssignmentName": { "value": "[concat([variable('eventHubNameSpace')],'/Microsoft.Authorization/', guid(uniqueString([variable('eventHubNameSpace')])))]" },
-          "roleDefinitionID": {
+          "roleAssignmentName": { "value": "[concat(variables('eventHubNameSpace'),'/Microsoft.Authorization/', guid(uniqueString(variables('eventHubNameSpace'))))]" },
+          "roleDefinitionName": {
             "value": "DataSender"
           }
         }
