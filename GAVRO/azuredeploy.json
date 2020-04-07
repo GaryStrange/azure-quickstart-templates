@@ -48,7 +48,7 @@
         },
         "parameters": {
           "storageAccountResourceId": { "value": "[reference('storagelinkedTemplate').outputs.storageAcctResourceId.value]" },
-          "eventHubNamespaceName": { "value": "gavroehns" }
+          "eventHubNamespaceName": { "value": "gavroehnamespace" }
         }
       }
     }
