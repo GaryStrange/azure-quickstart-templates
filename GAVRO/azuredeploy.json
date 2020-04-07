@@ -63,12 +63,13 @@
           "uri": "https://raw.githubusercontent.com/GaryStrange/azure-quickstart-templates/master/GAVRO/rbac-ehns-roleassignment.json",
           "contentVersion": "1.0.0.0"
         },
-        "parametersLink": {
-          "uri": "https://raw.githubusercontent.com/GaryStrange/azure-quickstart-templates/master/GAVRO/rbac-ehns-roleassignment.parameters.json",
-          "contentVersion": "1.0.0.0"
-        },
         "parameters": {
-          "principalId": { "value": "[reference('functionApplinkedTemplate').outputs.principalId.value]" }
+          "principalId": { "value": "[reference('functionApplinkedTemplate').outputs.principalId.value]" },
+          "roleAssignmentName": { "value": "[concat('gavroehnamespace/Microsoft.Authorization/', guid(uniqueString('gavroehnamespace')))]" },
+          "roleDefinitionID": {
+            "value": "2b629674-e913-4c01-ae53-ef4638d8f975",
+            "metadata": { "description": "Azure Event Hubs Data Sender" }
+          }
         }
       }
     }
