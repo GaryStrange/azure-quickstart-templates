@@ -34,8 +34,7 @@
       "name": "[parameters('roleAssignmentName')]",
       "properties": {
         "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', parameters('roleDefinitionId'))]",
-        "principalId": "[parameters('principalId')]",
-        "scope": "[resourceGroup().id]"
+        "principalId": "[parameters('principalId')]"
       }
     }
   ]
