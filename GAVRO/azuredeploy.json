@@ -33,7 +33,8 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
-          "storageAccountName": { "value": "[variables('storageAccountName')]" }
+          "storageAccountName": { "value": "[variables('storageAccountName')]" },
+          "targetEventHubNameSpace": { "value": "[variables('eventHubNameSpace')]" }
         }
       }
     },
