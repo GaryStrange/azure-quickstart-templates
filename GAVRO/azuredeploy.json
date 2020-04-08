@@ -3,7 +3,8 @@
   "contentVersion": "1.0.0.0",
   "variables": {
     "storageAccountName": "gavrostorage",
-    "eventHubNameSpace":  "gavroehnamespace"
+    "eventHubNameSpace": "gavroehnamespace",
+    "databricksWorkspaceName": "gavroADB"
   },
   "resources": [
     {
@@ -18,6 +19,22 @@
         },
         "parameters": {
           "storageAccountName": { "value": "[variables('storageAccountName')]" }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2018-05-01",
+      "name": "databrickslinkedTemplate",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/GaryStrange/azure-quickstart-templates/master/101-databricks-workspace/azuredeploy.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "workspaceName": { "value": "[variables('databricksWorkspaceName')]" },
+          "pricingTier": { "value": "standard" }
         }
       }
     },
