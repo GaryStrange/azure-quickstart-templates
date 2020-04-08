@@ -7,7 +7,7 @@
     },
     "targetEventHubNameSpace": {
       "type": "string"
-    }
+    },
     "functionAppName": {
       "type": "string",
       "defaultValue": "gavrofuncapp",
