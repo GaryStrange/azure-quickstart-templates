@@ -24,7 +24,7 @@
     },
     "ApplicationInsightsLocation": {
       "type": "string",
-      "defaultValue": "UK South",
+      "defaultValue": "[resourceGroup().location]",
       "allowedValues": [
         "East US",
         "South Central US",
